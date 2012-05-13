@@ -1,4 +1,49 @@
-This is your new Play 2.0 application
-=====================================
+Scala + Play! で試しにWeb Appを作ってみようかと。
+問題は、Hello World以上のやりたいことがないってことだが…。
 
-This file will be packaged with your application, when using `play dist`.
+参考資料はこれ
+http://www.playframework.org/documentation/2.0.1/ScalaHome
+
+日本語の資料もあるが、いかんせんバージョンが古い。
+http://playscalaja.appspot.com/documentation/0.9.1/guide2
+
+ひとまずPlayを落とす。
+wget http://download.playframework.org/releases/play-2.0.1.zip
+
+適当なところに解凍。
+unzip play-2.0.1.zip
+ここのディレクトリにPATHが通ると今後便利になる。
+
+なお、他のディストリビューションは不明だが、Arch Linuxの場合は下記でPlayがインストールされ、PATH設定も考えなくてよさそう。
+# yaourt -S play-framework
+ただ今回はお試しなので、これはやらない。HOME上の適当なところに配置するのみ。
+
+これで準備完了。
+
+面倒なのでPATHは通っているものとして以下を記載する。
+
+----------------------------------------
+
+1. プロジェクトを作る
+プロジェクト名は hoge で。
+$ play new hoge
+これで上記コマンドを実行したディレクトリの配下にhogeというディレクトリが作成され、その中に各種ファイルが生成される。
+
+2. アプリを起動する
+$ cd hoge
+ここで
+$ play run
+としてもいいし、
+$ play
+でplayコンソールを起動し、そこで run と打ってもよい。
+
+3. テストを実行する
+hogeディレクトリにて
+$ mkdir test
+このディレクトリ内のコードがテストとして実行される。
+あとはhogeディレクトリ内で
+$ play test
+としてもいいし、playコンソール上で test と打ってもよい。
+
+テストコードは、Specificationのサブクラスを作って書く様子。
+今時流行りの should って書くスタイル。
